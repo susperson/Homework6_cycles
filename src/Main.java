@@ -63,13 +63,121 @@ public class Main {
         //Задание 3.2
         System.out.println("\nЗадание 3.2:");
 
-        int deposit2 = 29_000;
+        int deposit2 = 15_000;
         float total2 = 0F;
+        int i = 0;
 
-        for (int i = 1; i <= 12; i++) {
-            total2 = total2 * 1.01F;
+//        for (; i <= 12; i++) {
+//            total2 = total2 * 1.01F;
+//            total2 = total2 + deposit2;
+//            System.out.println("Месяц " + i + ", сумма накоплений равна " + total2 + " рублей");
+//        }
+
+// ДЗ 7
+        //Задание 1.1
+        System.out.println("\nДЗ7. Задание 1.1:");
+
+        int requiredAmount = 2_459_000;
+        float rate = 1.01F;
+
+        while (total2 < requiredAmount) {
+            total2 = total2 * rate;
             total2 = total2 + deposit2;
+            i++;
             System.out.println("Месяц " + i + ", сумма накоплений равна " + total2 + " рублей");
+        }
+
+        //Задание 1.2
+        System.out.println("\nДЗ7. Задание 1.2:");
+
+        int count = 0;
+        while (count < 10) {
+            count++;
+            System.out.print(count + " ");
+        }
+
+        System.out.println();
+        for (;count > 0; count--) {
+            System.out.print(count + " ");
+        }
+
+        //Задание 1.3
+        System.out.println("\nДЗ7. Задание 1.3:");
+        int population = 12_000_000;
+        int birthrate = 17;
+        int deathrate = 8;
+        int populationGrowth = birthrate - deathrate;
+
+        for (int year = 1; year < 11; year++) {
+            population += population * populationGrowth / 1000;
+            System.out.println("Год " + year + ", численность населения составляет " + population);
+        }
+
+        //Задание 2.1
+        System.out.println("\nДЗ7. Задание 2.1:");
+        float depositRate = 0.07F;
+        int depositAmount = 15_000;
+        int month = 1;
+        int desiredAmount = 12_000_000;
+
+//        while (depositAmount < desiredAmount) {
+//            depositAmount += depositAmount*depositRate;
+//            System.out.println("Месяц " + month + ": сумма на депозите " + depositAmount);
+//            month++;
+//        }
+
+        //Задание 2.2
+        System.out.println("\nДЗ7. Задание 2.2:");
+
+//        while (depositAmount < desiredAmount) {
+//            depositAmount += depositAmount*depositRate;
+//            if (month % 6 == 0) {
+//                System.out.println("Месяц " + month + ": сумма на депозите " + depositAmount);
+//            }
+//            month++;
+//        }
+//        System.out.println("Месяц " + month + ": сумма на депозите " + depositAmount);
+
+        //Задание 2.3
+        System.out.println("\nДЗ7. Задание 2.3:");
+
+        int depositTermYears = 9;
+        int depositTermMonths = depositTermYears * 12;
+
+        for (; month <= depositTermMonths; month++) {
+            depositAmount += depositAmount*depositRate;
+            if (month % 6 == 0) {
+                System.out.println("Месяц " + month + ": сумма на депозите " + depositAmount);
+            }
+        }
+
+        //Задание 2.4
+        System.out.println("\nДЗ7. Задание 2.4:");
+
+        int firstFridayDate = 7;
+
+        for (int date = firstFridayDate; date <= 31; date += 7) {
+            System.out.println("Сегодня пятница, " + date + "-е число. Необходимо подготовить отчет.");
+        }
+
+        //Задание 3.1
+        System.out.println("\nДЗ7. Задание 3.1:");
+
+        int currentYear = 2022;
+        int startPeriodYear = currentYear - 200;
+        int finishPeriodYear = currentYear + 100;
+
+        for (int year = startPeriodYear; year <= finishPeriodYear; year++) {
+            if (year % 79 == 0) {
+                System.out.println(year);
+            }
+        }
+
+        //Задание 3.2
+        System.out.println("\nДЗ7. Задание 3.2:");
+
+        for (int a = 1; a < 11; a++) {
+            System.out.println("2*" + a + "=" + 2*a);
         }
     }
 }
