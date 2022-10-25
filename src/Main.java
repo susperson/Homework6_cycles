@@ -77,8 +77,11 @@ public class Main {
         //Задание 1.1
         System.out.println("\nДЗ7. Задание 1.1:");
 
-        while (total2 < 2_459_000) {
-            total2 = total2 * 1.01F;
+        int requiredAmount = 2_459_000;
+        float rate = 1.01F;
+
+        while (total2 < requiredAmount) {
+            total2 = total2 * rate;
             total2 = total2 + deposit2;
             i++;
             System.out.println("Месяц " + i + ", сумма накоплений равна " + total2 + " рублей");
@@ -115,8 +118,9 @@ public class Main {
         float depositRate = 0.07F;
         int depositAmount = 15_000;
         int month = 1;
+        int desiredAmount = 12_000_000;
 
-//        while (depositAmount < 12_000_000) {
+//        while (depositAmount < desiredAmount) {
 //            depositAmount += depositAmount*depositRate;
 //            System.out.println("Месяц " + month + ": сумма на депозите " + depositAmount);
 //            month++;
@@ -125,7 +129,7 @@ public class Main {
         //Задание 2.2
         System.out.println("\nДЗ7. Задание 2.2:");
 
-//        while (depositAmount < 12_000_000) {
+//        while (depositAmount < desiredAmount) {
 //            depositAmount += depositAmount*depositRate;
 //            if (month % 6 == 0) {
 //                System.out.println("Месяц " + month + ": сумма на депозите " + depositAmount);
@@ -137,7 +141,10 @@ public class Main {
         //Задание 2.3
         System.out.println("\nДЗ7. Задание 2.3:");
 
-        for (; month < 109; month++) {
+        int depositTermYears = 9;
+        int depositTermMonths = depositTermYears * 12;
+
+        for (; month <= depositTermMonths; month++) {
             depositAmount += depositAmount*depositRate;
             if (month % 6 == 0) {
                 System.out.println("Месяц " + month + ": сумма на депозите " + depositAmount);
@@ -149,10 +156,8 @@ public class Main {
 
         int firstFridayDate = 7;
 
-        for (int date = 1; date < 32; date++) {
-            if ((date - firstFridayDate) % 7 == 0) {
-                System.out.println("Сегодня пятница, " + date + "-е число. Необходимо подготовить отчет.");
-            }
+        for (int date = firstFridayDate; date <= 31; date += 7) {
+            System.out.println("Сегодня пятница, " + date + "-е число. Необходимо подготовить отчет.");
         }
 
         //Задание 3.1
